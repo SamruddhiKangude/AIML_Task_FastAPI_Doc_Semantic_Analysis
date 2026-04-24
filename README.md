@@ -22,9 +22,10 @@ cd AIML_Task_FastAPI_Doc_Semantic_Analysis-main
 ls
 ```
 (if you see app, submission, .env.submission, .gitignore, finance_docs.db, README.md, README.txt, requirements.txt below Length Name Then it is ok current directory)
-```
+
 
 Check Prerequisites
+
 ```powershell
 python --version
 pip --version
