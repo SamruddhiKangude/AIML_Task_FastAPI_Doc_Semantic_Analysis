@@ -43,7 +43,7 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 ```
 
 ```powershell
-\.venv\Scripts\Activate.ps1
+\.venv\Scripts\Activate
 ```
 
 
