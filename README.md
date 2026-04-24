@@ -7,7 +7,7 @@ This project provides a production-style FastAPI backend for financial document 
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1
+.\.venv\Scripts\Activate
 ```
 
 2. Install dependencies
