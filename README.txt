@@ -31,7 +31,7 @@ python -m venv .venv
 
 3) Activate virtual environment
 Command:
-.\.venv\Scripts\Activate.ps1
+.\.venv\Scripts\Activate
 
 If activation is blocked, run this first, then activate again:
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
