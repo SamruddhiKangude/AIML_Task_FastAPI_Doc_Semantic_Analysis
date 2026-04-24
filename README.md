@@ -39,18 +39,14 @@ python -m venv .venv
 ```
 
 ```powershell
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
-```
-
-```powershell
-\.venv\Scripts\Activate
+.\.venv\Scripts\Activate
 ```
 
 
 2. Install dependencies
 
 ```powershell
-pip install -r requirements.txt # ( If you get error not downloadning then open CMD and open as administrator and type command following)
+pip install -r requirements.txt
 ```
 
 3. Copy env config
