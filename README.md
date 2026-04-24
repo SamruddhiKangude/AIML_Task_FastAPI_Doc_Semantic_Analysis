@@ -66,7 +66,7 @@ uvicorn app.main:app --reload
 - http://127.0.0.1:8000/docs
   Wait For few min (aprox 2min)
 
-  ```
+  ```bash
 INFO:     Started server process [11056]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
