@@ -1,7 +1,48 @@
 # FastAPI Financial Document Management with Semantic Analysis
 
 This project provides a production-style FastAPI backend for financial document management with role-based access control and semantic retrieval.
+## Quick Start (Steps of How run Project)
 
+1. Create and activate virtual environment
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate
+```
+
+2. Install dependencies
+
+```powershell
+pip install -r requirements.txt
+```
+
+3. Copy env config
+
+```powershell
+Copy-Item .env.example .env
+```
+
+4. Run API
+
+```powershell
+uvicorn app.main:app --reload
+```
+
+5. Open docs
+
+- http://127.0.0.1:8000/docs
+  
+Wait For Few Min aprox (2min)
+
+``` INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [14460] using WatchFiles
+INFO:     Started server process [15280]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:49817 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49817 - "GET /openapi.json HTTP/1.1" 200 OK
+```
+  
 ## Features
 
 - JWT Authentication (`/auth/register`, `/auth/login`)
@@ -53,36 +94,6 @@ This project provides a production-style FastAPI backend for financial document 
 - `POST /rag/search`
 - `GET /rag/context/{document_id}`
 
-## Quick Start
-
-1. Create and activate virtual environment
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
-
-2. Install dependencies
-
-```powershell
-pip install -r requirements.txt
-```
-
-3. Copy env config
-
-```powershell
-Copy-Item .env.example .env
-```
-
-4. Run API
-
-```powershell
-uvicorn app.main:app --reload
-```
-
-5. Open docs
-
-- http://127.0.0.1:8000/docs
 
 ## RAG Retrieval Pipeline
 
