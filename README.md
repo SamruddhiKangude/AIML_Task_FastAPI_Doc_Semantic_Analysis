@@ -64,17 +64,17 @@ uvicorn app.main:app --reload
 5. Open docs
 
 - http://127.0.0.1:8000/docs
+
   Wait For few min (aprox 2min)
 
-  ```bash
+```cmd
 INFO:     Started server process [11056]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     127.0.0.1:64817 - "POST /users/assign-role HTTP/1.1" 200 OK
 INFO:     127.0.0.1:57309 - "GET /users/3/permissions HTTP/1.1" 200 OK
+  
   ```
-
-
 6. Alternatively, you can run a Python one-liner to assign the `Admin` role by user email (replace the email as needed):
 
 ```bash
