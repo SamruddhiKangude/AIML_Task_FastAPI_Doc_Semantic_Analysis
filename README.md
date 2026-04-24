@@ -37,7 +37,9 @@ git --version
 ```powershell
 python -m venv .venv
 ```
-
+```powershell
+python -m venv .venv
+```
 ```powershell
 .\.venv\Scripts\Activate
 ```
