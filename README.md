@@ -32,6 +32,17 @@ uvicorn app.main:app --reload
 
 - http://127.0.0.1:8000/docs
   
+Wait For Few Min aprox (2min)
+
+``` INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [14460] using WatchFiles
+INFO:     Started server process [15280]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:49817 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49817 - "GET /openapi.json HTTP/1.1" 200 OK
+```
+  
 ## Features
 
 - JWT Authentication (`/auth/register`, `/auth/login`)
