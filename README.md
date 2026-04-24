@@ -1,21 +1,47 @@
 # FastAPI Financial Document Management with Semantic Analysis
 
 This project provides a production-style FastAPI backend for financial document management with role-based access control and semantic retrieval.
-## Quick Start (Steps of How run Project)
+## Quick Start (Steps to Run the Project)
 
 ### Option A - VS Code terminal (PowerShell)
+
+Navigate to the project directory using the following commands:
+
+```powershell
+ls
+#(after running ls command you see file name like as AIML_Task_FastAPI_Doc_Semantic_Analysis-main below Length Name ....copy this and paste after cd)
+cd AIML_Task_FastAPI_Doc_Semantic_Analysis
+# Or
+cd AIML_Task_FastAPI_Doc_Semantic_Analysis-main
+ls #(if you see app, submission, .env.submission, .gitignore, finance_docs.db, README.md, README.txt, requirements.txt below Length Name Then it is ok current directory)
+```
+
+Check Prerequisites
+```powershell
+python --version
+pip --version
+git --version
+```
 
 1. Create and activate virtual environment
 
 ```powershell
 python -m venv .venv
+```
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
+
+```powershell
 \.venv\Scripts\Activate.ps1
 ```
+
 
 2. Install dependencies
 
 ```powershell
-pip install -r requirements.txt
+pip install -r requirements.txt # ( If you get error not downloadning then open CMD and open as administrator and type command following)
 ```
 
 3. Copy env config
@@ -30,11 +56,17 @@ Copy-Item .env.example .env
 uvicorn app.main:app --reload
 ```
 
+Wait untill INFO: Application Startup complete. (Then open following link in new browser)
+
 5. Open docs
 
+- http://127.0.0.1:8000 (firstly you see this after that in url /docs type after 8000)
+  
 - http://127.0.0.1:8000/docs
 
 ### Option B - Command Prompt (CMD)
+
+Go in proper project cmd and type following commands 
 
 1. Create and activate virtual environment
 
