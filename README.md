@@ -9,11 +9,19 @@ Navigate to the project directory using the following commands:
 
 ```powershell
 ls
-#(after running ls command you see file name like as AIML_Task_FastAPI_Doc_Semantic_Analysis-main below Length Name ....copy this and paste after cd)
+```
+# (after running ls command you see file name like as AIML_Task_FastAPI_Doc_Semantic_Analysis-main below Length Name ....copy this and paste after cd)
+```powershell
 cd AIML_Task_FastAPI_Doc_Semantic_Analysis
+```
 # Or
+```powershell
 cd AIML_Task_FastAPI_Doc_Semantic_Analysis-main
-ls #(if you see app, submission, .env.submission, .gitignore, finance_docs.db, README.md, README.txt, requirements.txt below Length Name Then it is ok current directory)
+```
+```powershell
+ls
+```
+#(if you see app, submission, .env.submission, .gitignore, finance_docs.db, README.md, README.txt, requirements.txt below Length Name Then it is ok current directory)
 ```
 
 Check Prerequisites
