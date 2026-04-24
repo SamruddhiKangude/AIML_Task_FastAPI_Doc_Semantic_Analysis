@@ -41,7 +41,7 @@ python -m venv .venv
 python -m venv .venv
 ```
 ```powershell
-.\.venv\Scripts\Activate
+ .\.venv\Scripts\Activate
 ```
 
 2. Install dependencies
