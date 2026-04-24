@@ -64,6 +64,22 @@ uvicorn app.main:app --reload
 5. Open docs
 
 - http://127.0.0.1:8000/docs
+  Wait For few min (aprox 2min)
+
+  ```
+INFO:     Started server process [11056]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:64817 - "POST /users/assign-role HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57309 - "GET /users/3/permissions HTTP/1.1" 200 OK
+  ```
+
+
+6. Alternatively, you can run a Python one-liner to assign the `Admin` role by user email (replace the email as needed):
+
+```bash
+python -c "import sqlite3; c=sqlite3.connect('finance_docs.db'); cur=c.cursor(); cur.execute('select id from users where email=?',('your Email id ',)); u=cur.fetchone()[0]; cur.execute('select id from roles where name=?',('Admin',)); r=cur.fetchone()[0]; cur.execute('insert or ignore into user_roles(user_id, role_id) values(?,?)',(u,r)); c.commit(); c.close(); print('Admin role assigned')"
+```
 
 ### Windows long path support (only if pip install fails)
 
