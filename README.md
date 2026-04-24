@@ -1,6 +1,7 @@
 # FastAPI Financial Document Management with Semantic Analysis
 
 This project provides a production-style FastAPI backend for financial document management with role-based access control and semantic retrieval.
+
 ## Quick Start (Steps of How run Project)
 
 1. Create and activate virtual environment
@@ -31,10 +32,10 @@ uvicorn app.main:app --reload
 5. Open docs
 
 - http://127.0.0.1:8000/docs
-  
+
 Wait For Few Min aprox (2min)
 
-``` INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+```INFO: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 INFO:     Started reloader process [14460] using WatchFiles
 INFO:     Started server process [15280]
 INFO:     Waiting for application startup.
@@ -42,7 +43,7 @@ INFO:     Application startup complete.
 INFO:     127.0.0.1:49817 - "GET /docs HTTP/1.1" 200 OK
 INFO:     127.0.0.1:49817 - "GET /openapi.json HTTP/1.1" 200 OK
 ```
-  
+
 ## Features
 
 - JWT Authentication (`/auth/register`, `/auth/login`)
@@ -87,13 +88,50 @@ INFO:     127.0.0.1:49817 - "GET /openapi.json HTTP/1.1" 200 OK
 - `GET /users/{id}/roles`
 - `GET /users/{id}/permissions`
 
+### How to change a user's role (after running the program)
+
+Use one of these two methods — the API (recommended) or direct DB SQL. Replace `ADMIN_BEARER_TOKEN` with a valid Admin JWT.
+
+- API (curl) — assign role to `user_id = 3`:
+
+```bash
+curl -X POST "http://localhost:8000/users/assign-role" \
+  -H "Authorization: Bearer ADMIN_BEARER_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"user_id": 3, "role_name": "Admin"}'
+```
+
+- Direct DB (SQL) — remove existing roles and set `Admin` for `user_id = 3`:
+
+```sql
+-- (optional) inspect roles
+SELECT id, name FROM roles;
+
+-- remove all roles for user 3
+DELETE FROM user_roles WHERE user_id = 3;
+
+-- add Admin role for user 3
+INSERT INTO user_roles (user_id, role_id)
+VALUES (3, (SELECT id FROM roles WHERE name = 'Admin'));
+```
+
+Or to only remove the `Client` role and add `Admin`:
+
+```sql
+DELETE FROM user_roles
+WHERE user_id = 3
+  AND role_id = (SELECT id FROM roles WHERE name = 'Client');
+
+INSERT INTO user_roles (user_id, role_id)
+VALUES (3, (SELECT id FROM roles WHERE name = 'Admin'));
+```
+
 ### RAG
 
 - `POST /rag/index-document`
 - `DELETE /rag/remove-document/{id}`
 - `POST /rag/search`
 - `GET /rag/context/{document_id}`
-
 
 ## RAG Retrieval Pipeline
 
