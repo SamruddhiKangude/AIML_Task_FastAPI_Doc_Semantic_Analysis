@@ -1,0 +1,70 @@
+{
+  "register_success": {
+    "endpoint": "POST /auth/register",
+    "status_code": 201,
+    "response": {
+      "id": 1,
+      "email": "samu@gmail.com",
+      "full_name": "Samu",
+      "company_name": "abc"
+    }
+  },
+  "login_success": {
+    "endpoint": "POST /auth/login",
+    "status_code": 200,
+    "response": {
+      "access_token": "<JWT_TOKEN>",
+      "token_type": "bearer"
+    }
+  },
+  "document_upload_success": {
+    "endpoint": "POST /documents/upload",
+    "status_code": 201,
+    "response": {
+      "document_id": 1,
+      "title": "Q1 Financial Report",
+      "company_name": "abc",
+      "document_type": "report",
+      "uploaded_by": 1,
+      "created_at": "2026-04-23T12:24:54"
+    }
+  },
+  "rag_index_success": {
+    "endpoint": "POST /rag/index-document",
+    "status_code": 200,
+    "response": {
+      "message": "Document indexed",
+      "chunks_indexed": 3
+    }
+  },
+  "rag_search_success": {
+    "endpoint": "POST /rag/search",
+    "status_code": 200,
+    "request": {
+      "query": "high debt ratio risk",
+      "limit": 5
+    },
+    "response": {
+      "query": "high debt ratio risk",
+      "results": [
+        {
+          "document_id": 1,
+          "chunk_id": 1,
+          "score": 0.37,
+          "rerank_score": -11.27,
+          "title": "Q1 Financial Report",
+          "company_name": "abc",
+          "document_type": "report",
+          "text": "<top relevant chunk text>"
+        }
+      ]
+    }
+  },
+  "rbac_client_forbidden_upload": {
+    "endpoint": "POST /documents/upload",
+    "status_code": 403,
+    "response": {
+      "detail": "new Document upload is restricted to admin users"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment
+.env
+env/
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Storage/documents (user uploads, large files)
+storage/documents/
+
+# Git attributes for LFS (if used)
+# *.bin filter=lfs diff=lfs merge=lfs -text
